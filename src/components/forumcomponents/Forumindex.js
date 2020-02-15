@@ -37,7 +37,7 @@ const ForumIndex = (props) => {
     }
     useEffect(() => {
         fetchPosts()
-    }, [])
+    }, )
 
     const [sessiontoken] = useState(props.token);
     const [forumPage, setForumpage] = useState(true);
