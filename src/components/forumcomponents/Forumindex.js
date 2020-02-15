@@ -4,6 +4,7 @@ import ForumCreate from './Forumcreate'
 import ForumTable from './Forumtable'
 import ForumEdit from './Forumedit'
 import Homepg from './ForumHome'
+import APIURL from '../../helpers/environment'
 
 
 const ForumIndex = (props) => {
@@ -25,7 +26,7 @@ const ForumIndex = (props) => {
     }
 
     const fetchPosts = () => {
-        fetch('http://localhost:4000/api/forum/getall',{
+        fetch(`${APIURL}/api/forum/getall`,{
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',

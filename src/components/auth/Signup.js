@@ -9,7 +9,7 @@ function Signup(props){
     let handleSubmit = (event) => {
         event.preventDefault()
 
-        fetch('http://localhost:4000/api/user/createuser', {
+        fetch('http://4000/api/user/createuser', {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json'

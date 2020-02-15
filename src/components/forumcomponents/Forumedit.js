@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Label,Input,FormGroup,Button, Modal, ModalHeader, ModalBody, Form, ButtonToggle} from 'reactstrap'
+import APIURL from '../../helpers/environment'
 
 const ForumEdit = (props) => {
     
@@ -9,7 +10,7 @@ const ForumEdit = (props) => {
 
     const updateCurrent = (event) => {
         event.preventDefault()
-        fetch (`http://localhost:4000/api/forum/post/update${props.postsToUpdate.id}`,{
+        fetch (`${APIURL}/api/forum/post/update${props.postsToUpdate.id}`,{
         method: "PUT",
         headers: new Headers ({
             "Content-Type": 'application/json',

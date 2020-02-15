@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody, Col} from 'reactstrap'
-
+import APIURL from '../../helpers/environment'
 
 const ForumCreate= (props) => {
     let [name, setName] = useState('')
@@ -10,7 +10,7 @@ const ForumCreate= (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        fetch('http://localhost:4000/api/forum/post/create',{
+        fetch(`${APIURL}/api/forum/post/create`,{
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json',

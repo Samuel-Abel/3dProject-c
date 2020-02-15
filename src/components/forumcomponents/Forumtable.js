@@ -1,12 +1,12 @@
 import React from 'react'
 import './Forumtable.css'
 import {Table, Button} from 'reactstrap'
-
+import APIURL from '../../helpers/environment'
 
 const ForumTable = (props) => {
 
   const deletePost = (forum) => {
-    fetch(`http://localhost:4000/api/forum/post/delete/${forum.id}`, {
+    fetch(`${APIURL}/api/forum/post/delete/${forum.id}`, {
       method: 'DELETE',
       headers: new Headers({
         'Content-Type': 'application/json',
