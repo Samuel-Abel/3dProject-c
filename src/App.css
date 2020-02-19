@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   /* background-image: url("https://images.unsplash.com/photo-1447433693259-c8549e937d62?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=777&q=80"); */
-  
+  font-family: "Courier New", monospace;
 }
 body{
   background-image: url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');

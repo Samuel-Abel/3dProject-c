@@ -1,6 +1,6 @@
 import React from 'react'
 import './Forumtable.css'
-import {Table, Button} from 'reactstrap'
+import {Table, Button, ButtonGroup} from 'reactstrap'
 import APIURL from '../../helpers/environment'
 
 const ForumTable = (props) => {
@@ -28,8 +28,10 @@ const ForumTable = (props) => {
         <td>{forum.description}</td>
         <td>{forum.name}</td>
         <td>
+          <ButtonGroup>
           <Button color='warning' onClick={()=>{props.editUpdatePost(forum); props.updateOn() }}>Update</Button>
           <Button color='danger' onClick={()=>{deletePost(forum)}}>Delete</Button>
+          </ButtonGroup>
         </td>
       </tr>   
       )

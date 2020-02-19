@@ -21,7 +21,9 @@ const Auth = (props) => {
                     </Row>
                 <Row>
                     <Col md='12'>
+                        <p>Don't have an account?
                         <Signup updateToken={props.updateToken}/>
+                        </p>
                     </Col>
                     </Row>
             </Container>

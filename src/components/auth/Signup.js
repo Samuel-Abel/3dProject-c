@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './Signup.css'
 import {Modal, ModalHeader, Form, FormGroup, Label, Input, Button, ModalBody} from 'reactstrap';
+import APIURL from '../../helpers/environment'
 
 function Signup(props){
     let [username, setUsername] = useState('username')
@@ -9,7 +10,7 @@ function Signup(props){
     let handleSubmit = (event) => {
         event.preventDefault()
 
-        fetch('http://4000/api/user/createuser', {
+        fetch(`${APIURL}/api/user/createuser`, {
             method: 'POST',
             headers: new Headers({
                 'Content-Type': 'application/json'

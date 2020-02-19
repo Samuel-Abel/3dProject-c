@@ -38,15 +38,15 @@ const toggle = () => setModal(!modal);
                 <ModalBody>
             <Form onSubmit={handleSubmit}>
                 <FormGroup>
-                    <Label htmlFor="name" />
+                    <Label htmlFor="name">Name</Label>
                     <Input onChange={ (e) => {setName(e.target.value) } } name="name" value={name} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="description" />
+                    <Label htmlFor="description">Description</Label>
                     <Input name="description" onChange={ (e) => {setDescription(e.target.value) } }  value={description} />
                 </FormGroup>
                 <FormGroup>
-                    <Label htmlFor="dimensions" />
+                    <Label htmlFor="dimensions">Dimensions</Label>
                     <Input onChange={ (e) => {setDimensions(e.target.value) } } name="dimensions" value={dimensions}/>
                 </FormGroup>
                 <Button type="submit">Click to Submit</Button>
