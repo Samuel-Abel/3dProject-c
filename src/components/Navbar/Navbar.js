@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { Navbar, NavbarBrand, Collapse, NavbarToggler, Nav, NavItem, Button} from 'reactstrap'
+import './navbar.css'
 
 
 const Sitebar = (props) => {
@@ -12,7 +13,7 @@ const Sitebar = (props) => {
     }
 
     return(
-        <Navbar color = 'white' light expand='md'>
+        <Navbar color='white' light expand='md'>
             <NavbarBrand href='/'>3d Forum</NavbarBrand>
             <NavbarToggler onClick={toggle}/>
             <Collapse isOpen={isOpen} navbar>

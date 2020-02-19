@@ -3,6 +3,7 @@ import Signup from './Signup'
 import { Container, Row, Col} from 'reactstrap'
 import Login from './Login'
 import Header from './Header'
+import './Auth.css'
 
 
 const Auth = (props) => {
@@ -21,7 +22,9 @@ const Auth = (props) => {
                     </Row>
                 <Row>
                     <Col md='12'>
-                        <p>Don't have an account?
+                        <br/>
+                        <br/>
+                        <p class='signup'>Don't have an account?
                         <Signup updateToken={props.updateToken}/>
                         </p>
                     </Col>
