@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Container, Row, Col, Button} from 'reactstrap'
+import {Container, Row, Col, Button,CardDeck} from 'reactstrap'
 import ForumCreate from './Forumcreate'
 import ForumTable from './Forumtable'
 import ForumEdit from './Forumedit'
@@ -33,7 +33,7 @@ const ForumIndex = (props) => {
                 'Authorization': props.token
             })
         }).then(res => res.json())
-        .then(forumData => {setForums(forumData); console.log(forumData)}) //
+        .then(forumData => {setForums(forumData); }) //
     }
     useEffect(() => {
         fetchPosts()
@@ -51,30 +51,33 @@ const ForumIndex = (props) => {
 
         <Container>
             <Row>
-                <Col md='12'>
+                <Col md='6'>
                     <ForumCreate fetchPosts={fetchPosts} token={props.token} />
                     </Col>
+                    <Col md='6'>
+                <Button color='primary' type='submit' onClick={()=>forumData()}>Back Home</Button>
+                </Col>
                     </Row>
+                    <br></br>
                     <Row>
-                    <Col md='12'>
+                        
+                    {/* <Col md='8'> */}
+                    
                         <ForumTable 
                         forums={forums} 
                         fetchPosts={fetchPosts} 
                         token={props.token}
                         editUpdatePost={editUpdatePost}
                         updateOn= {updateOn}/>
-                    </Col>
+                        
+                    {/* </Col> */}
+                    
                         {
                             updateActive ? 
                             <ForumEdit postsToUpdate={postsToUpdate} updateOff={updateOff} token={props.token} fetchPosts={fetchPosts} />
                             :
                             null
                         }
-            </Row>
-            <Row>
-                <Col md='12'>
-                <Button color='primary' type='submit' onClick={()=>forumData()}>Back Home</Button>
-                </Col>
             </Row>
         </Container>
     )

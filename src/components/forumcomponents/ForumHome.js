@@ -29,10 +29,10 @@ const Homepg = (props) => {
         <Row>
           <Col md='12' className='m-auto'>
       <Jumbotron>
-        <h1 className="display-3">Willkommen meine Freundin!</h1>
-        <p className="lead">Wir haben groS Idee fur du und dir dreiD printing.</p>
+        <h1 className="display-3">Welcome</h1>
+        <p className="lead">Share your ideas, etc.</p>
         <hr className="my-2" />
-        <p>Habt ein gut Zeit!</p>
+        <p>Click the Button</p>
         <p className="lead">
           <Button color="primary"  type='submit' onClick={()=>forumTable()}>Forum</Button>
         </p>

@@ -7,6 +7,7 @@ const ForumEdit = (props) => {
     const [editDesc, setEditDesc] = useState(props.postsToUpdate.description);
     const [editName, setEditName] = useState(props.postsToUpdate.name);
     const [editDim, setEditDimensions] = useState(props.postsToUpdate.dimensions);
+    const [editPhoto, setEditPhoto]= useState(props.postsToUpdate.dimensions);
 
     const updateCurrent = (event) => {
         event.preventDefault()
@@ -16,7 +17,7 @@ const ForumEdit = (props) => {
             "Content-Type": 'application/json',
             "Authorization": props.token
         }),
-        body: JSON.stringify({forum: { description: editDesc, dimensions: editDim, name: editName }})
+        body: JSON.stringify({forum: { description: editDesc, dimensions: editDim, name: editName, photo: editPhoto }})
     }).then( res=> {props.fetchPosts(); props.updateOff() })
     }
 
@@ -36,6 +37,10 @@ const ForumEdit = (props) => {
                     <FormGroup>
                         <Label htmlFor="dimensions">Edit Dimensions:</Label>
                         <Input name="dimensions" value={editDim} onChange={(e) => setEditDimensions(e.target.value)} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Label htmlFor='photo'>Change Photo:</Label>
+                        <Input name='photo' value={editPhoto} onChange={(e) => setEditPhoto(e.target.value)} />
                     </FormGroup>
                     <Button type="submit">Update the Post!</Button>
                 </Form>

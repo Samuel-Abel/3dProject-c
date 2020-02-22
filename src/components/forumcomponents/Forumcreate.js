@@ -6,6 +6,7 @@ const ForumCreate= (props) => {
     let [name, setName] = useState('')
     let [dimensions, setDimensions] = useState('')
     let [description, setDescription] = useState('')
+    let [photo, setPhoto] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -16,19 +17,24 @@ const ForumCreate= (props) => {
                 'Content-Type': 'application/json',
                 'Authorization': props.token
             }),
-            body: JSON.stringify({forum: {name:name, description:description, dimensions:dimensions}})
+            body: JSON.stringify({forum: {name:name, description:description, dimensions:dimensions, photo: photo}})
         }).then(res => res.json())
         .then(forumData => {
             console.log(forumData)
             setName('')
             setDimensions('')
-            setDescription('Time')
+            setDescription('')
+            setPhoto('')
             props.fetchPosts()
         })
     }
 
+
+
 const [modal, setModal] = useState(false);
 const toggle = () => setModal(!modal);
+
+
 
     return(
         <div>
@@ -48,6 +54,10 @@ const toggle = () => setModal(!modal);
                 <FormGroup>
                     <Label htmlFor="dimensions">Dimensions</Label>
                     <Input onChange={ (e) => {setDimensions(e.target.value) } } name="dimensions" value={dimensions}/>
+                </FormGroup>
+                <FormGroup>
+                    <Label htmlFor='photo'>Image</Label>
+                    <Input onChange={ (e) => {setPhoto(e.target.value) } } name="photo" value={photo}/>
                 </FormGroup>
                 <Button type="submit">Click to Submit</Button>
             </Form>

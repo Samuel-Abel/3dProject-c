@@ -5,3 +5,7 @@
 .tablename{
     color: crimson;
 }
+
+.cardBod{
+    min-width: 25vw;
+}
